@@ -1,0 +1,74 @@
+.row{
+	width:100%;
+}
+.option-title, .option-type, .option-value, .option-shortcode{
+	width:10%;
+	margin-right:2.5%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.option-checkbox{
+	width: 4%;
+	margin-right:1%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.option-shortcode{
+	width:25%;
+	margin-right: 0;
+}
+.option-title input{
+	width:100%;
+}
+.option-value{
+	width:50%;
+}
+.option-value input, .option-type input, .option-value textarea{
+	width:100%;
+}
+.add-more-options-container{
+	margin-top:10px;
+	padding-top:10px;
+	border-top:solid 1px #dfdfdf;
+}
+.option-type-select-text{
+	width:25%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.option-type-select{
+	width:20%;
+	margin-right:5%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.option-type-select select{
+	width:100%;
+}
+.add-option-button{
+	width:10%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.add-option-button button{
+	width:100%;
+}
+.success{
+	width:98%;
+	color: #4F8A10;
+    background-color: #DFF2BF;
+    padding: 1%;
+}
+.success p{
+	margin:0;
+}
