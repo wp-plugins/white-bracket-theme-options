@@ -8,8 +8,7 @@ Tested up to: 4.2.4
 White Bracket Theme Options lets you create global content, or content that you can then add to any page via shortcode. 
 The shortcode is generated as soon as you you save you content.
 
-There are currently two types of content that you can create. the first type is a standard input box, and the second type is a fully functiinaly WYSIWYG editor.
-This plugin will be developed further to inclide an input field for images, as well as enabling yo to style your standard HTML tags such as h1, h2, h3, h4 p and a tags.
+There are currently two types of content that you can create. The first type is a standard input box, and the second type is a fully functiinaly WYSIWYG editor.
 
 == Installation ==
 You can install this plugin in 3 different ways.
