@@ -37,7 +37,7 @@ function white_bracket_theme_options() {
 					$option_name = strtolower(str_replace(' ', '_', 'wb_'.$value[0]));
 					$option_title = sanitize_text_field($value[0]);
 					$option_type = sanitize_text_field($value[1]);
-					$option_text = sanitize_text_field($value[2]);
+					$option_text = stripslashes($value[2]);
 					$option_value = serialize( array( 'option_title' => $option_title, 'option_type' => $option_type, 'option_text' => $option_text ) );
 					update_option( $option_name, $option_value );
 				endif;

@@ -4,7 +4,7 @@
  * Plugin Name: White Bracket Theme Options
  * Plugin URI: 
  * Description: Lets users define and edit global options.
- * Version: 1.0
+ * Version: 1.1.0
  * Author: White Bracket
  * Author URI: 
  * License: GPL2

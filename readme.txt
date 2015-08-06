@@ -29,13 +29,12 @@ Once the plugin has been installed and is activated, you can use the plugin by g
 Coming soon on http://www.white-bracket.co.uk
 
 == Screenshots ==
-/assets/screenshot-1.png
-/assets/screenshot-2.png
-/assets/screenshot-3.png
-
-More screenshots coming soon on http://www.white-bracket.co.uk
+Coming Soon.
 
 == Changelog ==
 
 = 1.0.0 =
 * White Bracket Theme Options
+
+= 1.1.0 =
+fixed a bug that was stripping out styling and images from the WYSIWYG editor
