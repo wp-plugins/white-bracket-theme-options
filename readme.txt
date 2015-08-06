@@ -12,6 +12,8 @@ The shortcode generated will look like [wbo option_name="XXXXXX"], copy and past
 
 There are currently two types of content that you can create. The first type is a standard input box, and the second type is a fully functional WYSIWYG editor.
 
+When you initially add a WYSIWYG editor it will add a text field, upon saving that option, it will turn into a WYSIWYG editor.
+
 Once the plugin has been installed and is activated, you can use the plugin by going to Appearance -> Theme Options.
 
 == Installation ==
@@ -26,10 +28,12 @@ You can install this plugin in 3 different ways.
 Once the plugin has been installed and is activated, you can use the plugin by going to Appearance -> Theme Options.
 
 == Frequently Asked Questions ==
-Coming soon on http://www.white-bracket.co.uk
+Coming soon.
 
 == Screenshots ==
-Coming Soon.
+1. Theme Options Page
+2. Theme Options Page With Input Field Added
+3. Theme Options Page With WYSIWYG Editor Added
 
 == Changelog ==
 
@@ -37,4 +41,4 @@ Coming Soon.
 * White Bracket Theme Options
 
 = 1.1.0 =
-fixed a bug that was stripping out styling and images from the WYSIWYG editor
+fixed a bug that was stripping out styling and images from the WYSIWYG editor on save.
