@@ -1,0 +1,131 @@
+h4{
+	margin:0;
+}
+.row{
+	width:100%;
+	padding:10px 20px;
+	margin-bottom:15px;
+	background-color:#ffffff;
+	border: 1px solid #dfdfdf;
+	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+ 	position: relative;
+}
+.row-title{
+	width:100%;
+	position: relative;
+}
+.row-content{
+	display:none;
+	border-top: 1px solid #dfdfdf;
+	padding:20px 0;
+	margin-top:10px;
+}
+.option-title, .option-type, .option-value, .option-shortcode{
+	width:15%;
+	margin-right:2.5%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.option-checkbox{
+	width: 4%;
+	margin-right:1%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.option-shortcode{
+	width:30%;
+	margin-right: 0;
+}
+.option-title input{
+	width:100%;
+}
+.option-value{
+	width:100%;
+	max-width: 600px;
+	margin-right: 0;
+}
+.option-value input, .option-type input, .option-value textarea{
+	width:100%;
+}
+.add-new-option-container{
+	margin-top:10px;
+	margin-bottom:20px;
+}
+.add-new-option-container .row{
+	border:0;
+}
+.add-more-options-container{
+	margin-top:10px;
+	padding-top:10px;
+	border-top:solid 1px #dfdfdf;
+}
+.option-type-select-text{
+	width:25%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.option-type-select{
+	width:20%;
+	margin-right:5%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.option-type-select select{
+	width:100%;
+}
+.add-option-button{
+	width:10%;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.add-option-button button{
+	width:100%;
+}
+.success{
+	width:98%;
+	color: #4F8A10;
+    background-color: #DFF2BF;
+    padding: 1%;
+}
+.success p{
+	margin:0;
+}
+.toggle-content{
+	width:35px;
+	top:0;
+	right:0;
+	bottom:0;
+	text-align: right;
+	cursor: pointer;
+	border-left: 1px solid #dfdfdf;
+	position:absolute;
+	z-index:1;
+}
+.row-title .toggle-content img{
+	-webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+.row-title.active .toggle-content img{
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}	
