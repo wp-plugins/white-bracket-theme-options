@@ -66,7 +66,7 @@ function white_bracket_theme_options() {
 				echo '<div class="option-title"><h4>Option Title</h4></div>';
 				echo '<div class="option-type"><h4>Option Type</h4></div>';
 				echo '<div class="option-value"><h4>Option Value</h4></div>';
-			echo '<div>';
+			echo '</div>';
 		echo '</div>';
 
 		echo '<form action="'.$_SERVER["REQUEST_URI"].'" method="post" enctype="multipart/form-data">';
@@ -100,35 +100,39 @@ function get_current_white_bracket_options(){
 	$current_wb_options = $wpdb->get_results("SELECT * FROM ".$prefix."options WHERE option_name LIKE '%wb_%' ORDER BY option_id ASC");
 
 	if( $current_wb_options ):
+		echo '<div class="row">';
+			echo '<div class="option-checkbox"><h4>Delete</h4></div>';
+			echo '<div class="option-title"><h4>Title</h4></div>';
+			echo '<div class="option-shortcode"><h4>Shortcode</h4></div>';
+		echo '</div>';
 		echo '<div class="options-header">';
-			echo '<div class="row">';
-				echo '<div class="option-checkbox"><h4>Delete</h4></div>';
-				echo '<div class="option-title"><h4>Option Title</h4></div>';
-				echo '<div class="option-value"><h4>Option Value</h4></div>';
-				echo '<div class="option-shortcode"><h4>Shortcode</h4></div>';
-			echo '<div>';
 			echo '<form action="'.$_SERVER["REQUEST_URI"].'" method="post">';
 				foreach( $current_wb_options as $option ):
 					$option_value = unserialize(unserialize($option->option_value));
 					echo '<div class="row">';
-						echo '<div class="option-checkbox"><input type="checkbox" name="'.$option->option_name.'[]" value="delete" /></div>';
-						echo '<div class="option-title"><h4>'.$option_value["option_title"].'</h4></div>';
-						if( $option_value["option_type"] == 'input' ):
-							echo '<div class="option-value">';
-								echo '<input type="hidden" name="'.$option->option_name.'[]" value="'.$option_value["option_title"].'" />';
-								echo '<input type="hidden" name="'.$option->option_name.'[]" value="'.$option_value["option_type"].'" />';
-								echo '<input type="text" name="'.$option->option_name.'[]" value="'.$option_value["option_text"].'" />';
-							echo '</div>';
-						elseif( $option_value["option_type"] == 'wysiwyg' ):
-							$name = $option->option_name.'[]';
-							echo '<div class="option-value">';
-								echo '<input type="hidden" name="'.$name.'" value="'.$option_value["option_title"].'" />';
-								echo '<input type="hidden" name="'.$name.'" value="'.$option_value["option_type"].'" />';
-								$settings = array( 'textarea_name' => $name, 'textarea_rows' => 5 );
-								wp_editor( $option_value["option_text"], $option->option_name, $settings );
-							echo '</div>';
-						endif;
-						echo '<div class="option-shortcode">[wbo option_name="'.$option->option_name.'"]</div>';
+						echo '<div class="row-title">';
+							echo '<div class="option-checkbox"><input type="checkbox" name="'.$option->option_name.'[]" value="delete" /></div>';
+							echo '<div class="option-title"><h4>'.$option_value["option_title"].'</h4></div>';
+							echo '<div class="option-shortcode">[wbo option_name="'.$option->option_name.'"]</div>';
+							echo '<div class="toggle-content"><img src="'.plugin_dir_url( __FILE__ ).'images/toggle-content.png" width="20" height="20" /></div>';
+						echo '</div>';
+						echo '<div class="row-content">';
+							if( $option_value["option_type"] == 'input' ):
+								echo '<div class="option-value">';
+									echo '<input type="hidden" name="'.$option->option_name.'[]" value="'.$option_value["option_title"].'" />';
+									echo '<input type="hidden" name="'.$option->option_name.'[]" value="'.$option_value["option_type"].'" />';
+									echo '<input type="text" name="'.$option->option_name.'[]" value="'.$option_value["option_text"].'" />';
+								echo '</div>';
+							elseif( $option_value["option_type"] == 'wysiwyg' ):
+								$name = $option->option_name.'[]';
+								echo '<div class="option-value">';
+									echo '<input type="hidden" name="'.$name.'" value="'.$option_value["option_title"].'" />';
+									echo '<input type="hidden" name="'.$name.'" value="'.$option_value["option_type"].'" />';
+									$settings = array( 'textarea_name' => $name, 'textarea_rows' => 5 );
+									wp_editor( $option_value["option_text"], $option->option_name, $settings );
+								echo '</div>';
+							endif;
+						echo '</div>';
 					echo '</div>';
 				endforeach;
 				echo '<input class="button button-primary button-large" type="submit" name="update-options" value="Update Options" />';

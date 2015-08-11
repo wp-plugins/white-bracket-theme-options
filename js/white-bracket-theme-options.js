@@ -14,10 +14,7 @@ jQuery(document).ready(function($) {
             $(wrapper).append('<div class="row"><div class="option-title"><input type="text" name="option'+option_id+'[]" /></div><div class="option-type"><input type="text" name="option'+option_id+'[]" value="'+option_type+'" readonly="readonly" /></div><div class="option-value"><input type="text" name="option'+option_id+'[]" /></div><a href="#" class="remove-option">Remove</a></div></div>');
             option_id++;
         } else if( option_type == 'wysiwyg' ){
-            $(wrapper).append('<div class="row"><div class="option-title"><input type="text" name="option'+option_id+'[]" /></div><div class="option-type"><input type="text" name="option'+option_id+'[]" value="'+option_type+'" readonly="readonly" /></div><div class="option-value"><textarea name="option'+option_id+'[]"></textarea></div><a href="#" class="remove-option">Remove</a></div></div>');
-            option_id++;
-        } else if( option_type == 'file' ){
-            $(wrapper).append('<div class="row"><div class="option-title"><input type="text" name="option'+option_id+'[]" /></div><div class="option-type"><input type="text" name="option'+option_id+'[]" value="'+option_type+'" readonly="readonly" /></div><div class="option-value"><input type="file" name="option'+option_id+'[]" /></div><a href="#" class="remove-option">Remove</a></div></div>');
+            $(wrapper).append('<div class="row"><div class="option-title"><input type="text" name="option'+option_id+'[]" /></div><div class="option-type"><input type="text" name="option'+option_id+'[]" value="'+option_type+'" readonly="readonly" /></div><div class="option-value"><textarea placeholder="Will become a WYSIWYG editor upon saving." name="option'+option_id+'[]"></textarea></div><a href="#" class="remove-option">Remove</a></div></div>');
             option_id++;
         }
     });
@@ -27,4 +24,9 @@ jQuery(document).ready(function($) {
     })
 
     $('.success').delay(2500).slideUp();
+
+    $('.toggle-content').click(function(){
+        $(this).parent().siblings('.row-content').slideToggle();
+        $(this).parent().toggleClass('active');
+    });
 });
