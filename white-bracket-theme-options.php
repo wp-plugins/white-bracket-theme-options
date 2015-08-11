@@ -3,10 +3,10 @@
 /**
  * Plugin Name: White Bracket Theme Options
  * Plugin URI: 
- * Description: Lets users define and edit global options.
- * Version: 1.1.0
+ * Description: Lets you create global content/global options. Perfect for creating content you want to appear in multiple places around the site, but only need to edit it in one place.
+ * Version: 1.2.0
  * Author: White Bracket
- * Author URI: 
+ * Author URI: http://www.white-bracket.co.uk
  * License: GPL2
  */
 
