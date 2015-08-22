@@ -3,8 +3,8 @@
 /**
  * Plugin Name: White Bracket Theme Options
  * Plugin URI: 
- * Description: Lets you create global content/global options. Perfect for creating content you want to appear in multiple places around the site, but only need to edit it in one place.
- * Version: 1.2.0
+ * Description: Lets you create global content/global options. Perfect for creating content you want to appear in multiple places around the site, and edit it in one place.
+ * Version: 1.3.0
  * Author: White Bracket
  * Author URI: http://www.white-bracket.co.uk
  * License: GPL2
@@ -36,7 +36,8 @@ if ( is_admin() ){
     if( isset($_GET["page"]) ):
         function white_bracket_theme_options_enqueue($hook) {
             if ( $_GET["page"] == 'white-bracket-theme-options' ):
-                wp_enqueue_script( 'white-bracket-theme-options-js', plugin_dir_url( __FILE__ ) . 'js/white-bracket-theme-options.js' );
+                wp_enqueue_style( 'wp-color-picker' );
+                wp_enqueue_script( 'white-bracket-theme-options-js', plugin_dir_url( __FILE__ ) . 'js/white-bracket-theme-options.js', array( 'wp-color-picker' ) );
                 wp_enqueue_style( 'white-bracket-theme-options-css', plugin_dir_url( __FILE__ ) . 'css/white-bracket-theme-options.css' );
             else:
                 return;

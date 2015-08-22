@@ -1,6 +1,48 @@
 h4{
 	margin:0;
 }
+.wb-tabs{
+	width:100%;
+	margin-top:15px;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: top;
+}
+.wb-tab{
+	width:auto;
+	padding:10px 20px;
+	background-color:#ffffff;
+	border: 1px solid #dfdfdf;
+	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+ 	font-size:16px;
+ 	cursor: pointer;
+ 	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: top;
+}
+.wb-tab.active{
+	border-bottom:0;
+	padding-bottom:12px;
+	margin-bottom: -2px;
+	font-weight: bold;
+}
+.wb-content, .wb-settings, .wb-documentation{
+	width:100%;
+	padding:10px 20px;
+	margin-bottom:15px;
+	background-color:#ffffff;
+	border: 1px solid #dfdfdf;
+	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+}
+.wb-settings, .wb-documentation{
+	display:none;
+}
 .row{
 	width:100%;
 	padding:10px 20px;
@@ -47,7 +89,7 @@ h4{
 }
 .option-value{
 	width:100%;
-	max-width: 600px;
+	max-width: 1000px;
 	margin-right: 0;
 }
 .option-value input, .option-type input, .option-value textarea{
@@ -128,4 +170,34 @@ h4{
     -moz-transition: 0.5s ease-in-out;
     -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
-}	
+}
+.label{
+	width:60px;
+	margin-right:15px;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.label-input{
+	width:200px;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.font-size{
+	width:65px;
+}
+.splitter{
+	width:100%;
+	height:15px;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align: middle;
+}
+.add-new-option-container .row .option-value{
+	width:58%;
+	margin-right:2%;
+}

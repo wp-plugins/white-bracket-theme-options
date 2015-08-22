@@ -29,4 +29,32 @@ jQuery(document).ready(function($) {
         $(this).parent().siblings('.row-content').slideToggle();
         $(this).parent().toggleClass('active');
     });
+
+    $('#wb-settings-tab').click(function(){
+        $('.wb-content').slideUp();
+        $('.wb-settings').delay(500).slideDown();
+        $('.wb-documentation').slideUp();
+        $('#wb-settings-tab').addClass('active');
+        $('#wb-content-tab').removeClass('active');
+        $('#wb-documentation-tab').removeClass('active');
+    });
+    $('#wb-content-tab').click(function(){
+        $('.wb-settings').slideUp();
+        $('.wb-content').delay(500).slideDown();
+        $('.wb-documentation').slideUp();
+        $('#wb-content-tab').addClass('active');
+        $('#wb-settings-tab').removeClass('active');
+        $('#wb-documentation-tab').removeClass('active');
+    });
+    $('#wb-documentation-tab').click(function(){
+        $('.wb-settings').slideUp();
+        $('.wb-content').slideUp();
+        $('.wb-documentation').delay(500).slideDown();
+        $('#wb-content-tab').removeClass('active');
+        $('#wb-settings-tab').removeClass('active');
+        $('#wb-documentation-tab').addClass('active');
+    });
+
+    $('.colour-picker').wpColorPicker();
+
 });
