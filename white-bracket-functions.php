@@ -35,8 +35,8 @@ function add_white_bracket_css_settings(){
     $a_settings = get_option('white_bracket_setting_a');
     $li_settings = get_option('white_bracket_setting_li');
 
-    $output = '<!-- ADDED BY WHITE BRACKET THEME OPTIONS -->';
-    $output .= '<style type="text/css">';
+    $output = '<!-- ADDED BY WHITE BRACKET THEME OPTIONS START -->'.PHP_EOL;
+    $output .= '<style type="text/css">'.PHP_EOL;
         if($h1_settings):
             $output .= add_white_bracket_css( 'h1', $h1_settings );
         endif;
@@ -64,8 +64,8 @@ function add_white_bracket_css_settings(){
         if($li_settings):
             $output .= add_white_bracket_css( 'li', $li_settings );
         endif;
-    $output .= '</style>';
-    $output .= '<!-- ADDED BY WHITE BRACKET THEME OPTIONS -->';
+    $output .= '</style>'.PHP_EOL;
+    $output .= '<!-- ADDED BY WHITE BRACKET THEME OPTIONS END -->'.PHP_EOL;
 
     if( $output != '<!-- ADDED BY WHITE BRACKET THEME OPTIONS --><style type="text/css"></style><!-- ADDED BY WHITE BRACKET THEME OPTIONS -->' ):
         echo $output;
@@ -78,7 +78,12 @@ function add_white_bracket_css( $tag, $setting ){
 
     $value = unserialize($setting);
     if( $value["font-size"] || $value["colour"] ):
-        $output = $tag.'{font-size:'.$value["font-size"].'; color:'.$value["colour"].';}';
+        $font_size = $value["font-size"];
+        if( stripos($font_size, 'px') > 0 ):
+            $output = $tag.'{font-size:'.$value["font-size"].' !important; color:'.$value["colour"].' !important;}'.PHP_EOL;
+        else:
+            $output = $tag.'{font-size:'.$value["font-size"].'px !important; color:'.$value["colour"].' !important;}'.PHP_EOL;
+        endif;
     else:
         $output = '';
     endif;

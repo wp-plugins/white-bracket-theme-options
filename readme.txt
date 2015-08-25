@@ -44,6 +44,9 @@ a: Yes, just add wpautop="no" e.g. [wbo option_name="wb_XXXX" wpautop="no"]
 
 == Changelog ==
 
+= 1.3.1 =
+* Automatically add 'px' to generated css, if it hasn't been specified
+
 = 1.3.0 =
 * Added in the ability for paragraph tags to be removed from the shortcode output.
 * Added in the ability add basic styling to h1, h2, h3, h4, h5, h6, p, a and li elements.
