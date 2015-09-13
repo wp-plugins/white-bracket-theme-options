@@ -33,24 +33,40 @@ jQuery(document).ready(function($) {
     $('#wb-settings-tab').click(function(){
         $('.wb-content').slideUp();
         $('.wb-settings').delay(500).slideDown();
+        $('.wb-analytics').slideUp();
         $('.wb-documentation').slideUp();
         $('#wb-settings-tab').addClass('active');
         $('#wb-content-tab').removeClass('active');
+        $('#wb-analytics-tab').removeClass('active');
         $('#wb-documentation-tab').removeClass('active');
     });
     $('#wb-content-tab').click(function(){
         $('.wb-settings').slideUp();
         $('.wb-content').delay(500).slideDown();
+        $('.wb-analytics').slideUp();
         $('.wb-documentation').slideUp();
         $('#wb-content-tab').addClass('active');
+        $('#wb-analytics-tab').removeClass('active');
+        $('#wb-settings-tab').removeClass('active');
+        $('#wb-documentation-tab').removeClass('active');
+    });
+    $('#wb-analytics-tab').click(function(){
+        $('.wb-settings').slideUp();
+        $('.wb-content').slideUp();
+        $('.wb-analytics').delay(500).slideDown();
+        $('.wb-documentation').slideUp();
+        $('#wb-content-tab').removeClass('active');
+        $('#wb-analytics-tab').addClass('active');
         $('#wb-settings-tab').removeClass('active');
         $('#wb-documentation-tab').removeClass('active');
     });
     $('#wb-documentation-tab').click(function(){
         $('.wb-settings').slideUp();
         $('.wb-content').slideUp();
+        $('.wb-analytics').slideUp();
         $('.wb-documentation').delay(500).slideDown();
         $('#wb-content-tab').removeClass('active');
+        $('#wb-analytics-tab').removeClass('active');
         $('#wb-settings-tab').removeClass('active');
         $('#wb-documentation-tab').addClass('active');
     });

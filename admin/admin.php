@@ -61,6 +61,10 @@ function white_bracket_theme_options() {
 	       			echo '$(\'.wb-settings\').show();';
 	       		echo '});';
 			echo '</script>';
+		elseif( isset($_POST["save-analytics"]) ):
+				$account_number = $_POST["google-analytics"];
+				update_option( 'white-bracket-google-analytics', $account_number );
+				$options_updated = 'yes';
 		endif;
 	endif;
 
@@ -80,6 +84,7 @@ function white_bracket_theme_options() {
 		echo '<div class="wb-tabs">';
 			echo '<div class="wb-tab active" id="wb-content-tab">Content</div>';
 			echo '<div class="wb-tab" id="wb-settings-tab">Settings</div>';
+			echo '<div class="wb-tab" id="wb-analytics-tab">Google Analytics</div>';
 			echo '<div class="wb-tab" id="wb-documentation-tab">Documentation</div>';
 		echo '</div>';
 		echo '<div class="wb-content">';
@@ -115,6 +120,10 @@ function white_bracket_theme_options() {
 		echo '<div class="wb-settings">';
 			echo '<h3>Settings</h3>';
 			get_current_white_bracket_settings();
+		echo '</div>';
+		echo '<div class="wb-analytics">';
+			echo '<h3>Google Analytics</h3>';
+			get_white_bracket_analytics();
 		echo '</div>';
 		echo '<div class="wb-documentation">';
 			echo '<h3>Documentation</h3>';
@@ -227,6 +236,20 @@ function generate_tag_setting_inputs( $title, $tag ){
 	return $output;
 }
 
+function get_white_bracket_analytics(){
+
+	$value = "";
+	$value = get_option('white-bracket-google-analytics');
+
+	$output = '<h4>Google Analytics Account Number</h4>';
+	$output .= '<form action="'.$_SERVER["REQUEST_URI"].'" method="post">';
+	$output .= '<p><input type="text" name="google-analytics" value="'.$value.'" placeholder="UA-12345678-1" /></p>';
+	$output .= '<input class="button button-primary button-large" type="submit" name="save-analytics" value="Save Analytics" />';
+	$output .= '</form>';
+
+	echo $output;
+}
+
 function get_white_bracket_documntation(){
 
 	$output = '<h4>Standard shortcode</h4>';
@@ -234,6 +257,9 @@ function get_white_bracket_documntation(){
 
 	$output .= '<h4>Remove p tags</h4>';
 	$output .= '<p>[wbo option_name="wb_XXXX" wpautop="no"]</p>';
+
+	$output .= '<h4>Google Analytics</h4>';
+	$output .= '<p>To add Google Analytics to your website, simply enter your account number into the input field and click save. Your Google Analytics account number will look something like UA-12345678-1. This will insert the universal analytics onto everypage on your website.</p>';
 
 	echo $output;
 }

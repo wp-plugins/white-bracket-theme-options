@@ -35,7 +35,7 @@ function add_white_bracket_css_settings(){
     $a_settings = get_option('white_bracket_setting_a');
     $li_settings = get_option('white_bracket_setting_li');
 
-    $output = '<!-- ADDED BY WHITE BRACKET THEME OPTIONS START -->'.PHP_EOL;
+    $output = '<!-- ADDED BY WHITE BRACKET THEME OPTIONS -->'.PHP_EOL;
     $output .= '<style type="text/css">'.PHP_EOL;
         if($h1_settings):
             $output .= add_white_bracket_css( 'h1', $h1_settings );
@@ -65,7 +65,7 @@ function add_white_bracket_css_settings(){
             $output .= add_white_bracket_css( 'li', $li_settings );
         endif;
     $output .= '</style>'.PHP_EOL;
-    $output .= '<!-- ADDED BY WHITE BRACKET THEME OPTIONS END -->'.PHP_EOL;
+    $output .= '<!-- ADDED BY WHITE BRACKET THEME OPTIONS -->'.PHP_EOL;
 
     if( $output != '<!-- ADDED BY WHITE BRACKET THEME OPTIONS --><style type="text/css"></style><!-- ADDED BY WHITE BRACKET THEME OPTIONS -->' ):
         echo $output;
@@ -80,9 +80,9 @@ function add_white_bracket_css( $tag, $setting ){
     if( $value["font-size"] || $value["colour"] ):
         $font_size = $value["font-size"];
         if( stripos($font_size, 'px') > 0 ):
-            $output = $tag.'{font-size:'.$value["font-size"].' !important; color:'.$value["colour"].' !important;}'.PHP_EOL;
+            $output = $tag.'{font-size:'.$value["font-size"].'; color:'.$value["colour"].';}'.PHP_EOL;
         else:
-            $output = $tag.'{font-size:'.$value["font-size"].'px !important; color:'.$value["colour"].' !important;}'.PHP_EOL;
+            $output = $tag.'{font-size:'.$value["font-size"].'px; color:'.$value["colour"].';}'.PHP_EOL;
         endif;
     else:
         $output = '';
@@ -90,3 +90,26 @@ function add_white_bracket_css( $tag, $setting ){
 
     return $output;
 }
+
+function add_white_bracket_google_analytics(){
+
+    $google_analytics = get_option('white-bracket-google-analytics');
+
+    $output = '<!-- ADDED BY WHITE BRACKET THEME OPTIONS -->'.PHP_EOL;
+    $output .= "<script>".PHP_EOL;;
+        $output .= "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){".PHP_EOL;
+        $output .= "(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),".PHP_EOL;
+        $output .= "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)".PHP_EOL;
+        $output .= "})(window,document,'script','//www.google-analytics.com/analytics.js','ga');".PHP_EOL;
+        $output .= "".PHP_EOL;
+        $output .= "ga('create', '".$google_analytics."', 'auto');".PHP_EOL;
+        $output .= "ga('send', 'pageview');".PHP_EOL;
+    $output .= "</script>".PHP_EOL;
+    $output .= '<!-- ADDED BY WHITE BRACKET THEME OPTIONS -->'.PHP_EOL;
+
+    echo $output;
+}
+$google_analytics = get_option('white-bracket-google-analytics');
+if($google_analytics):
+    add_action('wp_head','add_white_bracket_google_analytics');
+endif;

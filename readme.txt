@@ -1,11 +1,11 @@
 === White Bracket Theme Options ===
 Contributors: White Bracket
-Tags: global content, theme options, more wysiwyg editors, heading tags styling, tag styling
+Tags: global content, theme options, more wysiwyg editors, google analytics, universal analytics, universal google analytics
 Requires at least: 3.5
 Tested up to: 4.3
 
 == Description ==
-White Bracket Theme Options lets you create global content/global options that you can then add to any page or post via shortcode. The shortcode is generated as soon as you save your content. As well as creating additional content, you can set the font size and font colour of heading tags (h1 through to h6), p tags, a tags and li tags.
+White Bracket Theme Options lets you create global content/global options that you can then add to any page or post via shortcode. The shortcode is generated as soon as you save your content. As well as creating additional content, you can set the font size and font colour of heading tags (h1 through to h6), p tags, a tags and li tags. The latest addition to the plugin is the ability to add the latest Google Analytics code to every page on your website.
 
 This plugin is perfect for you, if you want content to appear in multiple places across your site, such as telephone numbers, email addresses and images. Edit the content in one place, and it changes everywhere you have used the generated shortcode.
 
@@ -31,8 +31,8 @@ You can install this plugin in 3 different ways.
 Once the plugin has been installed and is activated, you can use the plugin by going to Appearance -> Theme Options.
 
 == Frequently Asked Questions ==
-Q: Is it possible to remove p tags from the shortcode output?
-a: Yes, just add wpautop="no" e.g. [wbo option_name="wb_XXXX" wpautop="no"]
+= Q: Is it possible to remove p tags from the shortcode output? =
+A: Yes, just add wpautop="no" e.g. [wbo option_name="wb_XXXX" wpautop="no"]
 
 == Screenshots ==
 1. Theme Options Page
@@ -41,8 +41,13 @@ a: Yes, just add wpautop="no" e.g. [wbo option_name="wb_XXXX" wpautop="no"]
 4. Option updated
 5. Settings tab
 6. Editing H1 settings
+7. Google Analytics
 
 == Changelog ==
+
+= 1.3.2 =
+* Added the ability to add Google Analytics to every page on a website.
+* Removed the !important statement off the generated css as it was being applied to items such as menu items, which is not the intention. The main idea is the adjust the site content.
 
 = 1.3.1 =
 * Automatically add 'px' to generated css, if it hasn't been specified

@@ -3,8 +3,8 @@
 /**
  * Plugin Name: White Bracket Theme Options
  * Plugin URI: 
- * Description: Lets you create global content/global options. Perfect for creating content to appear in multiple places around the site, and edit it in one place.
- * Version: 1.3.1
+ * Description: Create content to appear in multiple places around your site and edit in one place. Add universal Google Analytics. Adjust text colours and size.
+ * Version: 1.3.2
  * Author: White Bracket
  * Author URI: http://www.white-bracket.co.uk
  * License: GPL2

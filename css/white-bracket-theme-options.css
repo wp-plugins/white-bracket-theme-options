@@ -30,7 +30,7 @@ h4{
 	margin-bottom: -2px;
 	font-weight: bold;
 }
-.wb-content, .wb-settings, .wb-documentation{
+.wb-content, .wb-settings, .wb-documentation, .wb-analytics{
 	width:100%;
 	padding:10px 20px;
 	margin-bottom:15px;
@@ -40,7 +40,7 @@ h4{
  	-moz-box-sizing: border-box;
  	box-sizing: border-box;
 }
-.wb-settings, .wb-documentation{
+.wb-settings, .wb-documentation, .wb-analytics{
 	display:none;
 }
 .row{
